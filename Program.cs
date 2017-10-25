@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using HandMadeBySne.Data;
 
 namespace HandMadeBySne
 {
@@ -14,7 +15,11 @@ namespace HandMadeBySne
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            // BuildWebHost(args).Run();
+            using(var context = new ApplicationDbContext())
+            {
+                context.Database.EnsureCreated();
+            }
         }
 
         public static IWebHost BuildWebHost(string[] args) =>

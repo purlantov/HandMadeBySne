@@ -25,7 +25,7 @@ namespace HandMadeBySne
             services.AddMvc();
             // services.AddDbContext<ApplicationDbContext>(options =>
             //             options.UseSqlServer(Configuration.GetConnectionString(name: "BloggingDatabase")));
-            services.Configure<ApplicationDbContext>(Configuration);
+            //services.Configure<ApplicationDbContext>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
